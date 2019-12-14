@@ -1,0 +1,64 @@
+{
+  "name": "popular-dishes",
+  "description": "> Project description",
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "scripts": {
+    "webpack-prod": "webpack --build=production",
+    "webpack-dev": "webpack --watch",
+    "timed-seeding": "node timeoutSeeding.js",
+    "seed-db": "node server/mock_data.js",
+    "schema": "mysql -u student -p < schema.sql",
+    "start": "node server/index.js",
+    "test-coverage": "jest --coverage",
+    "test": "jest --watchAll"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "aws-sdk": "^2.585.0",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "docker-compose": "^0.23.1",
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "mysql": "^2.17.1",
+    "mysql-client": "^0.3.0",
+    "nodemon": "^2.0.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "responsive": "^2.0.0",
+    "responsive-react": "^3.0.2",
+    "sequelize": "^5.21.2",
+    "styled-components": "^4.4.1",
+    "uuid": "^3.3.3",
+    "yarn": "^1.21.1"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "supertest": "^4.0.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yumnoms/popular-dishes.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/yumnoms/popular-dishes/issues"
+  },
+  "homepage": "https://github.com/yumnoms/popular-dishes#readme"
+}
