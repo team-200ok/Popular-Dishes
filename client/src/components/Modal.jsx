@@ -6,62 +6,32 @@ class Modal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: [
-        {
-          img:
-            "https://media-cdn.tripadvisor.com/media/photo-p/0e/2d/91/54/tuna.jpg",
-          caption: "This is delicious"
-        },
-        {
-          img:
-            "https://66.media.tumblr.com/3dc69c498feeef3778f07cd29616589c/tumblr_mn5i8lVXV21rl52wjo4_500.gifv",
-          caption: "This is shockingly good! I usually prefer fatty tuna."
-        }
-      ],
-      currentIdx: 0,
-      filteredPhotos: []
+      currentIdx: 0
     };
-    this.totalPhotoCount = this.state.images.length;
+    this.totalPhotoCount = Math.floor(
+      Math.random(this.props.photos.length / 2) * 100
+    );
     this.PhotoSliderRef = React.createRef();
   }
-  // componentDidMount() {
-  //   this.displayDishPhotos();
-  // }
 
   prevSlideButton() {
     const currentIdx = this.state.currentIdx;
-    if (currentIdx >= this.props.photos.length - 1) {
+    if (currentIdx >= 1) {
       this.setState({
         currentIdx: currentIdx - 1
       });
     }
+    console.log({ currentIdx });
   }
 
   nextSlideButton() {
     const currentIdx = this.state.currentIdx;
-    if (currentIdx < this.state.images.length - 1) {
+    if (currentIdx < this.totalPhotoCount - 1) {
       this.setState({
         currentIdx: currentIdx + 1
       });
     }
   }
-
-  // displayDishPhotos() {
-  //   let dishPhotos = [];
-
-  //   this.props.photos.map(photo => {
-  //     // if dishid matches the photo's dishid, render.
-  //     if (photo.dish_id === 1) {
-  //       dishPhotos.push({
-  //         photo_url: photo.photo_url,
-  //         photo_text: photo.photo_text
-  //       });
-  //     }
-  //   });
-  //   console.log(dishPhotos);
-
-  //   this.setState({ filteredPhotos: dishPhotos });
-  // }
 
   render() {
     return (
@@ -74,7 +44,7 @@ class Modal extends React.Component {
             &#x3c;
           </ModalButton>
           <PhotoSlide
-            image={this.state.images[this.state.currentIdx]}
+            image={this.props.photos[this.state.currentIdx]}
             currentIdx={this.state.currentIdx}
             totalPhotoCount={this.totalPhotoCount}
           />
@@ -127,7 +97,7 @@ const StyledInnerModal = styled.div`
 
 const StyledReviewDIV = styled.div`
   overflow: auto;
-  width: 40%;
+  width: 30%;
   background-color: white;
   z-index: 10000;
 `;

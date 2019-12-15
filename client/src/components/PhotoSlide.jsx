@@ -4,7 +4,7 @@ import styled from "styled-components";
 const PhotoSlide = props => {
   return (
     <StyledSlide>
-      <StyledImage src={props.image.img}></StyledImage>
+      <StyledImage src={props.image.photo_url}></StyledImage>
       <StyledCaption>
         <span> {props.image.caption}</span>
         <span>
