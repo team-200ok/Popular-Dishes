@@ -84,9 +84,12 @@ class Modal extends React.Component {
           >
             &#x3e;
           </ModalButton>
-          <div>
-            <img src=""></img>
-          </div>
+          <StyledReviewDIV>
+            <img
+              style={{ width: "80%" }}
+              src="https://food-photos-yelp.s3-us-west-1.amazonaws.com/Screen+Shot+2019-12-15+at+3.19.45+PM.png"
+            ></img>
+          </StyledReviewDIV>
         </StyledInnerModal>
         <StyledExitButton onClick={this.props.closePopup}>
           <h3>Close X</h3>
@@ -119,6 +122,13 @@ const StyledInnerModal = styled.div`
   justify-content: space-between;
   background-color: black;
   border-radius: 10px;
+  z-index: 10000;
+`;
+
+const StyledReviewDIV = styled.div`
+  overflow: auto;
+  width: 40%;
+  background-color: white;
   z-index: 10000;
 `;
 

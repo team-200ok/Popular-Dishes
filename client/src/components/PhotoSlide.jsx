@@ -19,7 +19,9 @@ const StyledSlide = styled.div`
   font-family: Helvetica Neue;
   font-size: 12px;
   color: white;
+  width: 60%;
   display: flex;
+  justify-content: center;
   flex-direction: row;
   position: relative;
 `;
