@@ -43,7 +43,7 @@
 
 10. Create a hyper-realistic page for a sushi restaurant
 
-11. I need to create dishId filter logic 
+11. I need to create dishId filter logic
 
 NEED TO FIX: put a different restaurant id, should serve you data based on the restaurant id, now it's default to restaurant id = 1
 
@@ -57,3 +57,5 @@ Server
 
 2. create a more realistic db file for 2 restaurants
 3. put the S3 image links
+
+4. Right now, what I'm querying doesn't match the restauarant id. Everything is still being hard-coded.

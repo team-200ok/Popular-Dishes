@@ -25,14 +25,11 @@ app.get("/api/photos/:restaurant_id", function(req, res) {
 });
 
 // serve static files
-app.use(express.static("./client/dist"));
-
-// get photos and caption
-app.get("/:restaurant_id", function(req, res) {
-  PopularDishesController.get(req, res);
-});
-
-// serve static files ( need to fix this )
 app.use("/:restaurant_id", express.static("./client/dist"));
+
+// // get photos and caption
+// app.get("/:restaurant_id", function(req, res) {
+//   PopularDishesController.get(req, res);
+// });
 
 app.listen(port, () => console.log(`Homiezz, listening on port ${port}`));

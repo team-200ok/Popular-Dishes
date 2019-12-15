@@ -12,7 +12,7 @@
     "timed-seeding": "node timeoutSeeding.js",
     "seed-db": "node server/mock_data.js",
     "schema": "mysql -u student -p < schema.sql",
-    "start": "node server/index.js",
+    "start": "nodemon server/index.js",
     "test-coverage": "jest --coverage",
     "test": "jest --watchAll"
   },

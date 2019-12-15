@@ -17,12 +17,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    // pathname returns the current path & filename of the page
+    const restaurantID = window.location.pathname;
     axios
-      .get("/api/popular-dishes/3")
+      .get(`/api/popular-dishes${restaurantID}`)
       .then(response => this.setState({ dishes: response.data }))
       .then(
         axios
-          .get("/api/photos/3")
+          .get(`/api/photos${restaurantID}`)
           .then(response => this.setState({ photos: response.data }))
       );
   }
