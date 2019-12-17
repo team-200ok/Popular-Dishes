@@ -1,4 +1,4 @@
-FROM node:8.10-alpine
+FROM node:10-alpine
 
 RUN mkdir -p /src/app
 
@@ -12,7 +12,7 @@ RUN npm install
 
 RUN apk update && apk add bash
 
-EXPOSE 3005
+EXPOSE 3008
 
 # ENTRYPOINT bash -c "./wait-for-it.sh database:3306 && npm run seed-db && npm run start"
 

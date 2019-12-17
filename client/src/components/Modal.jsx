@@ -57,7 +57,7 @@ class Modal extends React.Component {
           <StyledReviewDIV>
             <img
               style={{ width: "80%" }}
-              src="https://food-photos-yelp.s3-us-west-1.amazonaws.com/Screen+Shot+2019-12-15+at+3.19.45+PM.png"
+              src="https://food-photos-yelp.s3-us-west-1.amazonaws.com/Screen+Shot+2019-12-15+at+3.59.41+PM.png"
             ></img>
           </StyledReviewDIV>
         </StyledInnerModal>
@@ -97,6 +97,9 @@ const StyledInnerModal = styled.div`
 
 const StyledReviewDIV = styled.div`
   overflow: auto;
+  padding-top: 30px;
+  padding-left: 15px;
+
   width: 30%;
   background-color: white;
   z-index: 10000;

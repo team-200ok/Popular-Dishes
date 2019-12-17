@@ -5,7 +5,7 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const { PopularDishesController, PhotoController } = require("./controller.js");
-const port = 3007;
+const port = 3011;
 
 app.use(cors());
 

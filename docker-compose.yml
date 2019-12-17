@@ -4,7 +4,7 @@ services:
   populardishes:
     build: ./
     ports:
-      - "3005:3005"
+      - "3011:3011"
     depends_on:
       - "database"
     command: >
