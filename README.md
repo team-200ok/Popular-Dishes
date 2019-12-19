@@ -77,3 +77,16 @@ From within the root directory:
 ```sh
 npm install
 ```
+
+
+### CRUD API
+
+
+
+READ/GET : /api/popular-dishes/:restaurant_id -> gets top dishes of a restaurant
+READ/GET : /api/photos/:restaurant_id -> gets photos and captions
+
+Create/POST : /api/photos/:restaurant_id -> uploads new photo and caption
+Update/PUT : /api/photos/:restaurant_id -> updates caption and/or photo associated with dish
+
+Delete/DELETE : /api/photos/:restaurant_id -> deletes caption and/or photos associated with dish
