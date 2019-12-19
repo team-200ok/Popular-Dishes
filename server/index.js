@@ -24,6 +24,14 @@ app.get("/api/photos/:restaurant_id", function(req, res) {
   PhotoController.get(req, res);
 });
 
+app.put("/api/caption/:restaurant_id", function(req, res) {
+
+})
+
+app.delete("/api/caption/:restaurant_id", function(req,res) {
+  
+})
+
 // serve static files
 app.use("/:restaurant_id", express.static("./client/dist"));
 
