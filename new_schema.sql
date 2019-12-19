@@ -2,31 +2,38 @@ DROP DATABASE dishes;
 
 CREATE DATABASE popular_dishes;
 
-USE popular_dishes;
+\c popular_dishes;
+
+DROP TABLE IF EXISTS restaurants, dishes, users, reviews, photos;
 
 CREATE TABLE restaurants (
     id SERIAL PRIMARY KEY,  
-    restaurant_name VARCHAR(200), 
+    restaurant_name VARCHAR(200) NOT NULL,
+    business_address VARCHAR(200) NOT NULL,
+    claimed BOOLEAN DEFAULT 0,
+    category VARCHAR(20) NOT NULL,
+    business_date DATE NOT NULL,
+    summary VARCHAR(200) NOT NULL
 );
 
 
 CREATE TABLE dishes (
     id SERIAL PRIMARY KEY, 
     dish_name VARCHAR(200),
-    dish_price SMALLINT,
-    photo_count SMALLINT,
-    review_count INTEGER,
-    restaurant_id INTEGER
+    dish_price SMALLINT NOT NULL,
+    photo_count INTEGER DEFAULT 0,
+    review_count INTEGER DEFAULT 0,
+    restaurant_id INTEGER REFERENCES restaurants(id)
 );
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR (15) NOT NULL,
     last_name VARCHAR (20),
-    email VARCHAR (50),
-    avatar VARCHAR (200),
-    friend_count INTEGER,
-    review_count INTEGER
+    email VARCHAR (50) NOT NULL,
+    avatar VARCHAR (200) DEFAULT 'https://loremflickr.com/320/240',
+    friend_count INTEGER DEFAULT 0,
+    review_count INTEGER DEFAULT 0
 );
 
 
@@ -36,13 +43,14 @@ CREATE TABLE reviews (
     dish_id INTEGER REFERENCES dishes(id),
     review_date DATE NOT NULL,
     review_text TEXT NOT NULL,
-    user_id INTEGER REFERENCES users(id)
+    user_id INTEGER REFERENCES users(id),
+    star_count SMALLINT NOT NULL,
 );
 
 CREATE TABLE photos (
     id SERIAL PRIMARY KEY, 
     dish_id INTEGER REFERENCES dishes(id), 
     caption TEXT,
-    source VARCHAR(200), 
+    source VARCHAR(200) DEFAULT 'https://loremflickr.com/320/240', 
     restaurant_id INTEGER REFERENCES restaurants(id)
 );
