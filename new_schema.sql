@@ -1,4 +1,4 @@
-DROP DATABASE dishes;
+DROP DATABASE IF EXISTS popular_dishes;
 
 CREATE DATABASE popular_dishes;
 
@@ -10,7 +10,7 @@ CREATE TABLE restaurants (
     id SERIAL PRIMARY KEY,  
     restaurant_name VARCHAR(200) NOT NULL,
     business_address VARCHAR(200) NOT NULL,
-    claimed BOOLEAN DEFAULT 0,
+    claimed BOOLEAN DEFAULT false,
     category VARCHAR(20) NOT NULL,
     business_date DATE NOT NULL,
     summary VARCHAR(200) NOT NULL
@@ -19,8 +19,9 @@ CREATE TABLE restaurants (
 
 CREATE TABLE dishes (
     id SERIAL PRIMARY KEY, 
-    dish_name VARCHAR(200),
+    dish_name VARCHAR(50),
     dish_price SMALLINT NOT NULL,
+    summary VARCHAR(200),
     photo_count INTEGER DEFAULT 0,
     review_count INTEGER DEFAULT 0,
     restaurant_id INTEGER REFERENCES restaurants(id)
@@ -44,7 +45,7 @@ CREATE TABLE reviews (
     review_date DATE NOT NULL,
     review_text TEXT NOT NULL,
     user_id INTEGER REFERENCES users(id),
-    star_count SMALLINT NOT NULL,
+    star_count SMALLINT NOT NULL
 );
 
 CREATE TABLE photos (
