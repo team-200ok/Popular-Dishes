@@ -7,7 +7,7 @@ CREATE DATABASE popular_dishes;
 DROP TABLE IF EXISTS restaurants, dishes, users, reviews, photos;
 
 CREATE TABLE restaurants (
-    id SERIAL PRIMARY KEY,  
+    id INTEGER PRIMARY KEY,  
     restaurant_name VARCHAR(200) NOT NULL,
     business_address VARCHAR(200) NOT NULL,
     claimed BOOLEAN DEFAULT false,
@@ -18,9 +18,9 @@ CREATE TABLE restaurants (
 
 
 CREATE TABLE dishes (
-    id SERIAL PRIMARY KEY, 
+    id INTEGER PRIMARY KEY, 
     dish_name VARCHAR(50),
-    dish_price SMALLINT NOT NULL,
+    dish_price DECIMAL NOT NULL,
     summary VARCHAR(200),
     photo_count INTEGER DEFAULT 0,
     review_count INTEGER DEFAULT 0,
@@ -28,7 +28,7 @@ CREATE TABLE dishes (
 );
 
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
+    id INTEGER PRIMARY KEY,
     first_name VARCHAR (15) NOT NULL,
     last_name VARCHAR (20),
     email VARCHAR (50) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE users (
 
 
 CREATE TABLE reviews (
-    id SERIAL PRIMARY KEY,  
+    id INTEGER PRIMARY KEY,  
     restaurant_id INTEGER REFERENCES restaurants(id), 
     dish_id INTEGER REFERENCES dishes(id),
     review_date DATE NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE reviews (
 );
 
 CREATE TABLE photos (
-    id SERIAL PRIMARY KEY, 
+    id INTEGER PRIMARY KEY, 
     dish_id INTEGER REFERENCES dishes(id), 
     caption TEXT,
     source VARCHAR(200) DEFAULT 'https://loremflickr.com/320/240', 

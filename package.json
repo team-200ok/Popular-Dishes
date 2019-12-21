@@ -14,7 +14,9 @@
     "schema": "mysql -u student -p < schema.sql",
     "start": "nodemon server/index.js",
     "test-coverage": "jest --coverage",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "pgschema": "psql -d populardishes -a -f server/postgresql/pgschema.sql",
+    "seed-pgdb": "node server/postgresql/database.js"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.7.4",
@@ -28,6 +30,7 @@
     "mysql": "^2.17.1",
     "mysql-client": "^0.3.0",
     "nodemon": "^2.0.2",
+    "pg": "^7.15.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "responsive": "^2.0.0",

@@ -2,10 +2,8 @@ const faker = require('faker');
 const path = require('path');
 const fs = require('fs');
 
-
-    let titles = "id,dish_name,dish_price,summary,photo_count,review_count,restaurant_id \n";
     let data = "";
-    for (let i = 0; i < 100000; i++) {
+    for (let i = 0; i < 200000; i++) {
         let id = i + ',';
         let name = faker.lorem.words() + ',';
         let price = faker.commerce.price() + ',';
@@ -16,12 +14,13 @@ const fs = require('fs');
         data += id+name+price+summary+photoCount+reviewCount+restaurant+'\n';
     }
 
-    let file = titles + data;
+    let file = data;
   
-
-fs.writeFile(path.join('server', 'postgresql', 'seed', 'dishes_data.csv'), file, (err) => {
-    if (err) {
-        console.log('Error seeding dish data')
-    };
-    console.log('Dishes data saved!')
-})
+module.exports.write = async () => {
+    fs.writeFile(path.join('server', 'postgresql', 'seed', 'dishes_data.csv'), file, (err) => {
+        if (err) {
+            console.log('Error seeding dish data')
+        };
+        console.log('Dishes data saved!');
+    })
+}

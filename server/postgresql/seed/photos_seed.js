@@ -2,10 +2,8 @@ const faker = require('faker');
 const fs = require('fs');
 const path = require('path');
 
-
-    let titles = "id,dish_id,caption,source,restaurant_id \n";
     let data = "";
-    for (let i = 0; i < 100000; i++) {
+    for (let i = 0; i < 200000; i++) {
         let id = i + ',';
         let dish = Math.floor(Math.random() * (100000 - 1) + 1).toString() + ',';
         let caption = faker.lorem.sentence() + ',';
@@ -14,12 +12,13 @@ const path = require('path');
         data += id+dish+caption+source+restaurant+'\n';
     }
 
-    let file = titles + data;
+    let file = data;
 
-
-fs.writeFile(path.join('server', 'postgresql', 'seed', 'photos_data.csv'), file, (err) => {
-    if (err) {
-        console.log('Error seeding photo data')
-    };
-    console.log('Photo data saved!')
-})
+module.exports.write = async () => {
+    fs.writeFile(path.join('server', 'postgresql', 'seed', 'photos_data.csv'), file, (err) => {
+        if (err) {
+            console.log('Error seeding photo data')
+        };
+        console.log('Photo data saved!')
+    })
+}
