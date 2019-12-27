@@ -1,3 +1,5 @@
+DROP KEYSPACE IF EXISTS popular_dishes;
+
 CREATE KEYSPACE popular_dishes
     WITH REPLICATION = {
         'class': 'SimpleStrategy', 
@@ -6,7 +8,6 @@ CREATE KEYSPACE popular_dishes
 
 USE popular_dishes;
 
-Drop keyspace popular_dishes IF EXISTS;
 
 CREATE TABLE "carousel" (
     restaurant_id int,
@@ -17,8 +18,7 @@ CREATE TABLE "carousel" (
     image varchar,
     photo_count int,
     review_count int,
-    PRIMARY KEY (restaurant_id, review_count)
-);
+    PRIMARY KEY (restaurant_id, review_count));
 
 CREATE TABLE "modal" (
     restaurant_id int,
@@ -28,15 +28,15 @@ CREATE TABLE "modal" (
     summary text,
     image varchar,
     caption text,
-    user_name varchar,
+    first_name varchar,
+    last_name varchar,
     avatar varchar,
     review_text text,
     friend_count int,
     review_count int,
     date timestamp,
-    star_count int
-    PRIMARY KEY (restaurant_id, date)
-)
+    star_count int,
+    PRIMARY KEY (restaurant_id, date));
 
 CREATE TABLE "restaurants" (
     restaurant_id int,  
@@ -45,7 +45,5 @@ CREATE TABLE "restaurants" (
     claimed varchar,
     category varchar,
     business_date timestamp,
-    summary varchar
-)
-
-
+    summary varchar,
+    PRIMARY KEY (restaurant_id));
