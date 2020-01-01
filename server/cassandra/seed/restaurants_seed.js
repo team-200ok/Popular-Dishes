@@ -6,7 +6,7 @@ const writeRestaurants = fs.createWriteStream('server/cassandra/seed/restaurant_
 
 const writeTable = (writer, encoding) => {
     console.log('writing restaurants...')
-    let i = 100000;
+    let i = 10000000;
     let id = 0;
     const write = () => {
         let ok = true;
@@ -23,11 +23,11 @@ const writeTable = (writer, encoding) => {
             let data = restaurant + name + address + claimed + category + date + summary + '\n';
             if (i === 0) {
                 writer.write(data, encoding);
-                console.log('done writing restaurants')
+                console.log("Paste this in cql shell: COPY popular_dishes.restaurants (restaurant_id,restaurant_name,business_address,claimed,category,business_date,summary) FROM 'server/cassandra/seed/restaurant_data.csv';")
             } else {
                 ok = writer.write(data, encoding);
             }
-            if (i === 50000) {
+            if (i === 5000) {
                 console.log('halfway there!')
             }
         } while ( i > 0 && ok);

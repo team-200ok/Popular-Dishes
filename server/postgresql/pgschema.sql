@@ -2,18 +2,14 @@ DROP DATABASE IF EXISTS popular_dishes;
 
 CREATE DATABASE popular_dishes;
 
+DROP TABLE IF EXISTS restaurants, dishes, users, reviews;
+
 \c popular_dishes;
 
-DROP TABLE IF EXISTS restaurants, dishes, users, reviews, photos;
 
 CREATE TABLE restaurants (
     id BIGSERIAL PRIMARY KEY,  
-    restaurant_name VARCHAR(200) NOT NULL,
-    business_address VARCHAR(200) NOT NULL,
-    claimed BOOLEAN DEFAULT false,
-    category VARCHAR(20) NOT NULL,
-    business_date DATE NOT NULL,
-    summary VARCHAR(200) NOT NULL
+    restaurant_name VARCHAR(200) NOT NULL
 );
 
 
@@ -49,11 +45,3 @@ CREATE TABLE reviews (
     user_id INTEGER REFERENCES users(id),
     star_count SMALLINT NOT NULL
 );
-
--- CREATE TABLE photos (
---     id BIGSERIAL PRIMARY KEY, 
---     dish_id INTEGER REFERENCES dishes(id), 
---     caption TEXT,
---     source VARCHAR(200) DEFAULT 'https://loremflickr.com/320/240', 
---     restaurant_id INTEGER REFERENCES restaurants(id)
--- );

@@ -18,7 +18,7 @@ CREATE TABLE "carousel" (
     image varchar,
     photo_count int,
     review_count int,
-    PRIMARY KEY (restaurant_id, review_count));
+    PRIMARY KEY ((restaurant_id, image_id),review_count));
 
 CREATE TABLE "modal" (
     restaurant_id int,
@@ -26,24 +26,16 @@ CREATE TABLE "modal" (
     dish varchar,
     price float,
     summary text,
-    image varchar,
     caption text,
     first_name varchar,
     last_name varchar,
+    image_id uuid,
+    image varchar,
     avatar varchar,
     review_text text,
     friend_count int,
     review_count int,
     date timestamp,
     star_count int,
-    PRIMARY KEY (restaurant_id, date));
+    PRIMARY KEY ((restaurant_id, image_id, dish), date));
 
-CREATE TABLE "restaurants" (
-    restaurant_id int,  
-    restaurant_name varchar,
-    business_address varchar,
-    claimed varchar,
-    category varchar,
-    business_date timestamp,
-    summary varchar,
-    PRIMARY KEY (restaurant_id));

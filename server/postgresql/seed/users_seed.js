@@ -16,7 +16,7 @@ const writeTable = (writer, encoding) => {
             let firstName = faker.name.firstName() + ',';
             let lastName = faker.name.lastName() + ',';
             let email = faker.internet.email() + ',';
-            let avatar = `https://loremflickr.com/320/240?lock=${Math.floor(Math.random() * (1000 - 1) + 1)}` + ',';
+            let avatar = Math.floor(Math.random() * (1000 - 1) + 1) + ',';
             let friendCount = Math.floor(Math.random() * (1000 - 0) + 0).toString() + ',';
             let reviewCount = Math.floor(Math.random() * (10000 - 0) + 0).toString();
             let data = firstName + lastName + email + avatar + friendCount + reviewCount + '\n';
