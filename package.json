@@ -14,13 +14,19 @@
     "schema": "mysql -u student -p < schema.sql",
     "start": "nodemon server/index.js",
     "test-coverage": "jest --coverage",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "pgschema": "psql -d popular_dishes -a -f server/postgresql/pgschema.sql",
+    "seed-pgdb": "node server/postgresql/database.js",
+    "pgWriteCSV": "node server/postgresql/writeCSV.js",
+    "caSchema": "cqlsh -e \"SOURCE 'server/cassandra/schema.cql'\"",
+    "caWriteCSV": "node server/cassandra/writeCSV.js"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "aws-sdk": "^2.585.0",
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",
+    "cassandra-driver": "^4.3.1",
     "cors": "^2.8.5",
     "docker-compose": "^0.23.1",
     "express": "^4.17.1",
@@ -28,6 +34,7 @@
     "mysql": "^2.17.1",
     "mysql-client": "^0.3.0",
     "nodemon": "^2.0.2",
+    "pg": "^7.15.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "responsive": "^2.0.0",

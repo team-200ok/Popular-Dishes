@@ -4,8 +4,8 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const { PopularDishesController, PhotoController } = require("./controller.js");
-const port = 3011;
+const { PopularDishesController, PhotoController, ReviewController} = require("./controller.js");
+const port = 3000;
 
 app.use(cors());
 
@@ -24,11 +24,24 @@ app.get("/api/photos/:restaurant_id", function(req, res) {
   PhotoController.get(req, res);
 });
 
-app.put("/api/caption/:restaurant_id", function(req, res) {
+// get reviews associated with dish
+app.get("/api/review/:restaurant_id/:dish_id", function(req, res) {
+  ReviewController.get(req,res);
+})
+
+// updates review associated with dish
+app.put("/api/review/:restaurant_id/:dish_id", function(req, res) {
 
 })
 
-app.delete("/api/caption/:restaurant_id", function(req,res) {
+// uploads new review
+app.post("/api/review/:restaurant_id/:dish_id", function(req, res) {
+  ReviewController.post(req,res);
+})
+
+
+//deletes review associated with dish
+app.delete("/api/review/:restaurant_id/:dish_id", function(req,res) {
   
 })
 
