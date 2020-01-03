@@ -1,0 +1,11 @@
+config:
+    target: 'http://localhost:3000'
+    phases:
+    - duration: 60
+      arrivalRate: 20
+      rampTo: 500
+scenarios:
+    - name: "get requests for popular_dishes"
+      flow:
+      - get:
+          url: "/"

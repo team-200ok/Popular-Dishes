@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const newRelic = require('newrelic');
 const { PopularDishesController, PhotoController, ReviewController} = require("./controller.js");
 const port = 3000;
 
@@ -28,6 +29,8 @@ app.get("/api/photos/:restaurant_id", function(req, res) {
 app.get("/api/review/:restaurant_id/:dish_id", function(req, res) {
   ReviewController.get(req,res);
 })
+
+// get users associated with r
 
 // updates review associated with dish
 app.put("/api/review/:restaurant_id/:dish_id", function(req, res) {
