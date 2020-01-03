@@ -32,17 +32,17 @@ const pool = new Pool({ database: "popular_dishes" });
 })()
 
 // //RESTAURANT
-// COPY restaurants(restaurant_name) FROM '/Users/Projects/Projects/SDC/Popular-Dishes/server/postgresql/seed/restaurant_data.csv' WITH (FORMAT csv);
+// COPY restaurants(restaurant_name) FROM '/Users/kellywillard/hrsf124/SDC/popular-dishes-docker-ready/server/postgresql/seed/restaurant_data.csv' WITH (FORMAT csv);
 
 // //DISHES
-// COPY dishes(dish_name,dish_price,summary,photo_count,review_count,restaurant_id) FROM '/Users/Projects/Projects/SDC/Popular-Dishes/server/postgresql/seed/dishes_data.csv' WITH (FORMAT csv);
+// COPY dishes(dish_name,dish_price,summary,photo_count,review_count,restaurant_id) FROM '/Users/kellywillard/hrsf124/SDC/popular-dishes-docker-ready/server/postgresql/seed/dishes_data.csv' WITH (FORMAT csv);
 
 // //USERS
-// COPY users(first_name,last_name,email,avatar,friend_count,review_count) FROM '/Users/Projects/Projects/SDC/Popular-Dishes/server/postgresql/seed/users_data.csv' WITH (FORMAT csv);
+// COPY users(first_name,last_name,email,avatar,friend_count,review_count) FROM '/Users/kellywillard/hrsf124/SDC/popular-dishes-docker-ready/server/postgresql/seed/users_data.csv' WITH (FORMAT csv);
 
 // //REVIEWS
-// COPY reviews(restaurant_id,dish_id,review_date,review_text,caption,source,user_id,star_count) FROM '/Users/Projects/Projects/SDC/Popular-Dishes/server/postgresql/seed/reviews_data_1.csv' WITH (FORMAT csv);
-// COPY reviews(restaurant_id,dish_id,review_date,review_text,caption,source,user_id,star_count) FROM '/Users/Projects/Projects/SDC/Popular-Dishes/server/postgresql/seed/reviews_data_2.csv' WITH (FORMAT csv);
-// COPY reviews(restaurant_id,dish_id,review_date,review_text,caption,source,user_id,star_count) FROM '/Users/Projects/Projects/SDC/Popular-Dishes/server/postgresql/seed/reviews_data_3.csv' WITH (FORMAT csv);
-// COPY reviews(restaurant_id,dish_id,review_date,review_text,caption,source,user_id,star_count) FROM '/Users/Projects/Projects/SDC/Popular-Dishes/server/postgresql/seed/reviews_data_4.csv' WITH (FORMAT csv);
-// COPY reviews(restaurant_id,dish_id,review_date,review_text,caption,source,user_id,star_count) FROM '/Users/Projects/Projects/SDC/Popular-Dishes/server/postgresql/seed/reviews_data_5.csv' WITH (FORMAT csv);
+// COPY reviews(restaurant_id,dish_id,review_date,review_text,caption,source,user_id,star_count) FROM '/Users/kellywillard/hrsf124/SDC/popular-dishes-docker-ready/server/postgresql/seed/reviews_data_1.csv' WITH (FORMAT csv);
+// COPY reviews(restaurant_id,dish_id,review_date,review_text,caption,source,user_id,star_count) FROM '/Users/kellywillard/hrsf124/SDC/popular-dishes-docker-ready/server/postgresql/seed/reviews_data_2.csv' WITH (FORMAT csv);
+// COPY reviews(restaurant_id,dish_id,review_date,review_text,caption,source,user_id,star_count) FROM '/Users/kellywillard/hrsf124/SDC/popular-dishes-docker-ready/server/postgresql/seed/reviews_data_3.csv' WITH (FORMAT csv);
+// COPY reviews(restaurant_id,dish_id,review_date,review_text,caption,source,user_id,star_count) FROM '/Users/kellywillard/hrsf124/SDC/popular-dishes-docker-ready/server/postgresql/seed/reviews_data_4.csv' WITH (FORMAT csv);
+// COPY reviews(restaurant_id,dish_id,review_date,review_text,caption,source,user_id,star_count) FROM '/Users/kellywillard/hrsf124/SDC/popular-dishes-docker-ready/server/postgresql/seed/reviews_data_5.csv' WITH (FORMAT csv);
