@@ -1,12 +1,12 @@
-const restaurantData = require("./seed/restaurant_seed");
+// const restaurantData = require("./seed/restaurant_seed");
 const dishData = require("./seed/dishes_seed");
-const userData = require("./seed/users_seed");
-const reviewData = require("./seed/reviews_seed");
+// const userData = require("./seed/users_seed");
+// const reviewData = require("./seed/reviews_seed");
 
 (() => {
-    restaurantData.createFile();
+    // restaurantData.createFile();
     dishData.createFile();
-    userData.createFile();
-    reviewData.createFile();
+    // userData.createFile();
+    // reviewData.createFile();
 })();
 

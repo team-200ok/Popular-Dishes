@@ -1,16 +1,16 @@
 // SERVER ENTRY POINT ============================================================================
 
+const newRelic = require('newrelic');
 const express = require("express");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const newRelic = require('newrelic');
 const { PopularDishesController, PhotoController, ReviewController} = require("./controller.js");
 const port = 3000;
 
 app.use(cors());
 
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // ROUTES ========================================================================================
@@ -49,7 +49,7 @@ app.delete("/api/review/:restaurant_id/:dish_id", function(req,res) {
 })
 
 // serve static files
-app.use("/:restaurant_id", express.static("./client/dist"));
+app.use("/", express.static("./client/dist"));
 
 // // get photos and caption
 // app.get("/:restaurant_id", function(req, res) {

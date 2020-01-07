@@ -3,7 +3,11 @@ config:
     phases:
     - duration: 60
       arrivalRate: 20
-      rampTo: 500
+      rampTo: 1000
+      name: "Warm up the application"
+    - duration: 30
+      arrivalRate: 1000
+      name: "Sustain peak rate"
 scenarios:
     - name: "get requests for popular_dishes"
       flow:

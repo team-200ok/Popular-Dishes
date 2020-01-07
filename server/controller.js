@@ -1,3 +1,4 @@
+const newRelic = require('newrelic');
 const faker = require('faker');
 const { Pool } = require('pg');
 
@@ -18,7 +19,6 @@ module.exports = {
         if (err) {
           console.log(err.stack)
         } else {
-          console.log(result.rows);
           res.send(result.rows);
         }
       })
@@ -44,7 +44,6 @@ module.exports = {
         if (err) {
           console.log(err.stack)
         } else {
-          console.log(result.rows);
           res.send(result.rows);
         }
       })
@@ -54,7 +53,8 @@ module.exports = {
     get: (req, res) => {
       const query = {
         name: 'fetch-reviews',
-        text: 'SELECT * FROM reviews WHERE restaurant_id = $1 AND dish_id = $2',
+        // text: 'SELECT * FROM reviews WHERE restaurant_id = $1 AND dish_id = $2',
+        text: 'SELECT r.*, u.* FROM reviews r INNER JOIN users u ON r.user_id = u.id WHERE r.restaurant_id = $1 AND r.dish_id = $2',
         values: [req.params.restaurant_id, req.params.dish_id]
       }
       pool.query(query, (err, result) => {
