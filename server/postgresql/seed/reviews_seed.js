@@ -47,12 +47,12 @@ module.exports.createFile = () => {
     let id = -1;
     let increaseId = 0;
     let restaurantId = 0;
-    for (var j = 1; j < 6; j++) {
+    for (var j = 1; j < 21; j++) {
         const writeReviews = fs.createWriteStream(`server/postgresql/seed/reviews_data_${j}.csv`);
-        writeThis(id, increaseId, restaurantId)(30000000, writeReviews, 'utf-8');
-        id += 30000000;
-        increaseId += 10000000;
-        restaurantId += 2000000;
+        writeThis(id, increaseId, restaurantId)(7500000, writeReviews, 'utf-8');
+        id += 7500000;
+        increaseId += 2500000;
+        restaurantId += 500000;
     }
 }
 
