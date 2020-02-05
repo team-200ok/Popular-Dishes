@@ -1,13 +1,13 @@
-# Project Name
+# PrimoEats
 
-> Project description
+> A restaurant reviews application scaled to handle high amounts of traffic
 
 ## Related Projects
 
 https://github.com/yumnoms/reviews-service
 https://github.com/yumnoms/popular-dishes-service
 https://github.com/yumnoms/photo-carousel-service
-https://github.com/yumnoms/Laurence-Nguyen-proxy
+
 
 ## Table of Contents
 
