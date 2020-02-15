@@ -43,7 +43,7 @@
     "sequelize": "^5.21.2",
     "styled-components": "^4.4.1",
     "uuid": "^3.3.3",
-    "yarn": "^1.21.1"
+    "yarn": "^1.22.0"
   },
   "devDependencies": {
     "faker": "^4.1.0",
