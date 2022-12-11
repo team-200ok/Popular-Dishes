@@ -29,7 +29,7 @@
     "cassandra-driver": "^4.3.1",
     "cors": "^2.8.5",
     "docker-compose": "^0.23.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "install": "^0.13.0",
     "mysql": "^2.17.1",
     "mysql-client": "^0.3.0",
